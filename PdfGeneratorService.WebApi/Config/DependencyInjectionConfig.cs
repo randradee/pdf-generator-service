@@ -1,5 +1,5 @@
-using PdfGenerator.Application.Interfaces;
-using PdfGenerator.Application.UseCases;
+using PdfGeneratorService.Application.Abstractions;
+using PdfGeneratorService.Application.Interfaces;
 using PdfGeneratorService.Infrastructure.Services;
 
 namespace PdfGeneratorService.WebApi.Config
@@ -9,9 +9,11 @@ namespace PdfGeneratorService.WebApi.Config
         public static IServiceCollection AddApplicationServices(this IServiceCollection services)
         {
             services.AddSingleton<ITemplateRenderer, TemplateRenderer>();
-            services.AddSingleton<IPdfGenerator, Infrastructure.Services.PdfGenerator>();
+            services.AddSingleton<IPdfGenerator, PdfGenerator>();
             
-            services.AddSingleton<GeneratePdfUseCase>();
+            services.AddMediatR(x => x.RegisterServicesFromAssembly(typeof(CommandBase<>).Assembly));
+
+
 
             return services;
         }

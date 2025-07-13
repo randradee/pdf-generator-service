@@ -8,7 +8,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\PdfGenerator.Application\PdfGenerator.Application.csproj" />
+      <ProjectReference Include="..\PdfGeneratorService.Application\PdfGeneratorService.Application.csproj" />
     </ItemGroup>
 
     <ItemGroup>

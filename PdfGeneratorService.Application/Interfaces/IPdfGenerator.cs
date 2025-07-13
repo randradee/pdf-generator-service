@@ -1,4 +1,4 @@
-namespace PdfGenerator.Application.Interfaces;
+namespace PdfGeneratorService.Application.Interfaces;
 
 public interface IPdfGenerator
 {

@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfGeneratorService.WebApi", "PdfGeneratorService.WebApi\PdfGeneratorService.WebApi.csproj", "{0D45A688-99AA-4BC8-BDE1-95930AE90B46}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfGenerator.Application", "PdfGenerator.Application\PdfGenerator.Application.csproj", "{C843036C-ECA9-42CA-9035-5475113C1675}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfGeneratorService.Application", "PdfGeneratorService.Application\PdfGeneratorService.Application.csproj", "{C843036C-ECA9-42CA-9035-5475113C1675}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfGeneratorService.Infrastructure", "PdfGeneratorService.Infrastructure\PdfGeneratorService.Infrastructure.csproj", "{860E2EDA-10F9-4ECC-BAA0-4BD0FCAF5D3D}"
 EndProject

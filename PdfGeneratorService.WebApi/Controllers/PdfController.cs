@@ -1,23 +1,21 @@
-using Microsoft.AspNetCore.Authorization;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using PdfGenerator.Application.Interfaces;
-using PdfGenerator.Application.UseCases;
+using PdfGeneratorService.Application.Commands;
 using PdfGeneratorService.WebApi.Dtos;
 using PdfGeneratorService.WebApi.Extensions;
+using Microsoft.AspNetCore.Authorization;
 
 namespace PdfGeneratorService.WebApi.Controllers;
 
 [ApiController]
 [Route("api/pdf")]
-public class PdfController(GeneratePdfUseCase generatePdfUseCase) : ControllerBase
+public class PdfController(IMediator mediator) : ControllerBase
 {
     [HttpPost]
     [AllowAnonymous]
     public async Task<IActionResult> Generate([FromBody] PdfRequest request)
     {
-        var dataDict = request.Data.ToDictionary();
-        var pdfBytes = await generatePdfUseCase.ExecuteAsync(request.TemplateHtml, dataDict);
-        
+        var pdfBytes = await mediator.Send(new GeneratePdfCommand(request.TemplateHtml, request.Data));
         Response.Headers.Append("Content-Disposition", "attachment; filename=documento.pdf");
         return File(pdfBytes, "application/pdf");
     }

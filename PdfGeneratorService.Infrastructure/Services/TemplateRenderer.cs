@@ -1,5 +1,5 @@
 using HandlebarsDotNet;
-using PdfGenerator.Application.Interfaces;
+using PdfGeneratorService.Application.Interfaces;
 
 namespace PdfGeneratorService.Infrastructure.Services;
 
