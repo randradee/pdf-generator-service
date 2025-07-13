@@ -1,4 +1,5 @@
 using PdfGenerator.Application.Interfaces;
+using PdfGenerator.Application.UseCases;
 using PdfGeneratorService.Infrastructure.Services;
 
 namespace PdfGeneratorService.WebApi.Config
@@ -9,6 +10,8 @@ namespace PdfGeneratorService.WebApi.Config
         {
             services.AddSingleton<ITemplateRenderer, TemplateRenderer>();
             services.AddSingleton<IPdfGenerator, Infrastructure.Services.PdfGenerator>();
+            
+            services.AddSingleton<GeneratePdfUseCase>();
 
             return services;
         }
