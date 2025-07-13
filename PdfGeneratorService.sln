@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfGeneratorService.WebApi", "PdfGeneratorService.WebApi\PdfGeneratorService.WebApi.csproj", "{0D45A688-99AA-4BC8-BDE1-95930AE90B46}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfGenerator.Application", "PdfGenerator.Application\PdfGenerator.Application.csproj", "{C843036C-ECA9-42CA-9035-5475113C1675}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfGeneratorService.Infrastructure", "PdfGeneratorService.Infrastructure\PdfGeneratorService.Infrastructure.csproj", "{860E2EDA-10F9-4ECC-BAA0-4BD0FCAF5D3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfGeneratorService.Domain", "PdfGeneratorService.Domain\PdfGeneratorService.Domain.csproj", "{BE34C6E8-F17C-490A-8460-473ACAD90E0D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0D45A688-99AA-4BC8-BDE1-95930AE90B46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D45A688-99AA-4BC8-BDE1-95930AE90B46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D45A688-99AA-4BC8-BDE1-95930AE90B46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D45A688-99AA-4BC8-BDE1-95930AE90B46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C843036C-ECA9-42CA-9035-5475113C1675}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C843036C-ECA9-42CA-9035-5475113C1675}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C843036C-ECA9-42CA-9035-5475113C1675}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C843036C-ECA9-42CA-9035-5475113C1675}.Release|Any CPU.Build.0 = Release|Any CPU
+		{860E2EDA-10F9-4ECC-BAA0-4BD0FCAF5D3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{860E2EDA-10F9-4ECC-BAA0-4BD0FCAF5D3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{860E2EDA-10F9-4ECC-BAA0-4BD0FCAF5D3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{860E2EDA-10F9-4ECC-BAA0-4BD0FCAF5D3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE34C6E8-F17C-490A-8460-473ACAD90E0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE34C6E8-F17C-490A-8460-473ACAD90E0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE34C6E8-F17C-490A-8460-473ACAD90E0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE34C6E8-F17C-490A-8460-473ACAD90E0D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
