@@ -1,10 +1,9 @@
 using MediatR;
-using PdfGeneratorService.Application.Commands;
-using PdfGeneratorService.Application.Interfaces;
+using PdfGeneratorService.Application.Features.Pdf.Commands;
+using PdfGeneratorService.Application.Interfaces.Pdf;
 using PdfGeneratorService.WebApi.Extensions;
 
-namespace PdfGeneratorService.Application.Handlers;
-
+namespace PdfGeneratorService.Application.Features.Pdf.Handlers;
 
 public class GeneratePdfCommandHandler(ITemplateRenderer templateRenderer, IPdfGenerator pdfGenerator)
     : IRequestHandler<GeneratePdfCommand, byte[]>

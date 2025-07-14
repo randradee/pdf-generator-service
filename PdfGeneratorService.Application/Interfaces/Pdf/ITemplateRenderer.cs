@@ -1,4 +1,4 @@
-namespace PdfGeneratorService.Application.Interfaces;
+namespace PdfGeneratorService.Application.Interfaces.Pdf;
 
 public interface ITemplateRenderer
 {

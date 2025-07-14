@@ -1,9 +1,8 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using PdfGeneratorService.Application.Commands;
 using PdfGeneratorService.WebApi.Dtos;
-using PdfGeneratorService.WebApi.Extensions;
 using Microsoft.AspNetCore.Authorization;
+using PdfGeneratorService.Application.Features.Pdf.Commands;
 
 namespace PdfGeneratorService.WebApi.Controllers;
 

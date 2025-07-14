@@ -1,7 +1,7 @@
 using System.Text.Json;
 using PdfGeneratorService.Application.Abstractions;
 
-namespace PdfGeneratorService.Application.Commands;
+namespace PdfGeneratorService.Application.Features.Pdf.Commands;
 
 public class GeneratePdfCommand : CommandBase<byte[]>
 {

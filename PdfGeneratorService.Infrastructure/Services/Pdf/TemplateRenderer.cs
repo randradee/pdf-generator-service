@@ -1,7 +1,7 @@
 using HandlebarsDotNet;
-using PdfGeneratorService.Application.Interfaces;
+using PdfGeneratorService.Application.Interfaces.Pdf;
 
-namespace PdfGeneratorService.Infrastructure.Services;
+namespace PdfGeneratorService.Infrastructure.Services.Pdf;
 
 public class TemplateRenderer : ITemplateRenderer
 {
