@@ -6,14 +6,14 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Configuration
     .SetBasePath(Directory.GetCurrentDirectory())
     .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-    .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true, reloadOnChange: true)
+    .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true)
     .AddEnvironmentVariables();
 
 builder.Services.AddDatabase(builder.Configuration);
-
 builder.Services.AddJwtAuthentication(builder.Configuration);
-builder.Services.AddSwaggerConfig();
+
 builder.Services.AddApplicationServices();
+builder.Services.AddSwaggerConfig();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
