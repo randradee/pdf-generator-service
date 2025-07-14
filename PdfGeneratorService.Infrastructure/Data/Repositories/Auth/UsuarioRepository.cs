@@ -14,4 +14,11 @@ public class UsuarioRepository(AppDbContext context) : IUsuarioRepository
             .AsNoTracking()
             .FirstOrDefaultAsync(x => x.Username == username && x.Ativo, cancellationToken);
     }
+    
+    public async Task CreateUserAsync(Usuario usuario, CancellationToken cancellationToken = default)
+    {
+        await context.Usuarios.AddAsync(usuario, cancellationToken);
+        await context.SaveChangesAsync(cancellationToken);
+    }
+
 }

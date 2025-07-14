@@ -17,8 +17,8 @@ namespace PdfGeneratorService.Infrastructure.Migrations
                 {
                     id = table.Column<Guid>(type: "uuid", nullable: false),
                     username = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
-                    password_hash = table.Column<string>(type: "text", nullable: false),
-                    password_salt = table.Column<string>(type: "text", nullable: false),
+                    password_hash = table.Column<byte[]>(type: "bytea", nullable: false),
+                    password_salt = table.Column<byte[]>(type: "bytea", nullable: false),
                     criado_em = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     atualizado_em = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     ativo = table.Column<bool>(type: "boolean", nullable: false)

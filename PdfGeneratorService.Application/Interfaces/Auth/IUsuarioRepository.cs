@@ -6,4 +6,5 @@ namespace PdfGeneratorService.Application.Interfaces.Auth;
 public interface IUsuarioRepository
 {
     Task<Usuario?> GetUserAsync(string username, CancellationToken cancellationToken = default);
+    Task CreateUserAsync(Usuario usuario, CancellationToken cancellationToken = default);
 }

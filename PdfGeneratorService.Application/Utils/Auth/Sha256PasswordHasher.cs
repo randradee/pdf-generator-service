@@ -17,22 +17,25 @@ public static class Sha256PasswordHasher
         );
     }
 
-    public static bool VerifyPassword(string password, string storedHashBase64, string storedSaltBase64)
+    public static bool VerifyPassword(string password, byte[] storedHash, byte[] storedSalt)
     {
-        byte[] saltBytes = Convert.FromBase64String(storedSaltBase64);
-        byte[] passwordBytes = Encoding.UTF8.GetBytes(password);
+        var passwordBytes = Encoding.UTF8.GetBytes(password);
+        var passwordWithSalt = new byte[passwordBytes.Length + storedSalt.Length];
 
-        byte[] passwordWithSalt = new byte[passwordBytes.Length + saltBytes.Length];
         Buffer.BlockCopy(passwordBytes, 0, passwordWithSalt, 0, passwordBytes.Length);
-        Buffer.BlockCopy(saltBytes, 0, passwordWithSalt, passwordBytes.Length, saltBytes.Length);
+        Buffer.BlockCopy(storedSalt, 0, passwordWithSalt, passwordBytes.Length, storedSalt.Length);
 
-        using (var sha256 = SHA256.Create())
-        {
-            byte[] computedHash = sha256.ComputeHash(passwordWithSalt);
-            string computedHashBase64 = Convert.ToBase64String(computedHash);
-            return computedHashBase64 == storedHashBase64;
-        }
+        using var sha256 = SHA256.Create();
+        var computedHash = sha256.ComputeHash(passwordWithSalt);
+        Console.WriteLine($"Comparando senha...");
+        Console.WriteLine($"Senha digitada: {password}");
+        Console.WriteLine($"Salt (Base64): {Convert.ToBase64String(storedSalt)}");
+        Console.WriteLine($"Hash esperado: {Convert.ToBase64String(storedHash)}");
+        Console.WriteLine($"Hash calculado: {Convert.ToBase64String(computedHash)}");
+        
+        return CryptographicOperations.FixedTimeEquals(computedHash, storedHash);
     }
+
 
 
 }

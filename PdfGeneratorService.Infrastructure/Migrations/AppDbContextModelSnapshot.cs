@@ -41,14 +41,14 @@ namespace PdfGeneratorService.Infrastructure.Migrations
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("criado_em");
 
-                    b.Property<string>("PasswordHash")
+                    b.Property<byte[]>("PasswordHash")
                         .IsRequired()
-                        .HasColumnType("text")
+                        .HasColumnType("bytea")
                         .HasColumnName("password_hash");
 
-                    b.Property<string>("PasswordSalt")
+                    b.Property<byte[]>("PasswordSalt")
                         .IsRequired()
-                        .HasColumnType("text")
+                        .HasColumnType("bytea")
                         .HasColumnName("password_salt");
 
                     b.Property<string>("Username")

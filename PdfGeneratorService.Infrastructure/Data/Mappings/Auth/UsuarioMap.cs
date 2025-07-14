@@ -20,10 +20,12 @@ public class UsuarioMap : EntityBaseMap<Usuario>
 
         builder.Property(u => u.PasswordHash)
             .HasColumnName("password_hash")
+            .HasColumnType("bytea")
             .IsRequired();
 
         builder.Property(u => u.PasswordSalt)
             .HasColumnName("password_salt")
+            .HasColumnType("bytea")
             .IsRequired();
     }
 }

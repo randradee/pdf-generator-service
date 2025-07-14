@@ -12,7 +12,7 @@ using PdfGeneratorService.Infrastructure.Data.Context;
 namespace PdfGeneratorService.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250714230315_Initial_CreateAuthTables")]
+    [Migration("20250714231947_Initial_CreateAuthTables")]
     partial class Initial_CreateAuthTables
     {
         /// <inheritdoc />
@@ -44,14 +44,14 @@ namespace PdfGeneratorService.Infrastructure.Migrations
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("criado_em");
 
-                    b.Property<string>("PasswordHash")
+                    b.Property<byte[]>("PasswordHash")
                         .IsRequired()
-                        .HasColumnType("text")
+                        .HasColumnType("bytea")
                         .HasColumnName("password_hash");
 
-                    b.Property<string>("PasswordSalt")
+                    b.Property<byte[]>("PasswordSalt")
                         .IsRequired()
-                        .HasColumnType("text")
+                        .HasColumnType("bytea")
                         .HasColumnName("password_salt");
 
                     b.Property<string>("Username")

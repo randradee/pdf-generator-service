@@ -1,5 +1,6 @@
 using System.Net;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PdfGeneratorService.Application.Features.Auth.Commands;
 
@@ -27,5 +28,17 @@ public class AuthController : ControllerBase
             return Unauthorized("Usuário ou senha inválidos.");
 
         return Ok(token);
+    }
+    
+    [HttpPost("create")]
+    [AllowAnonymous]
+    public async Task<IActionResult> Register(CreateUserCommand command)
+    {
+        var result = await _mediator.Send(command);
+
+        if (!result)
+            return BadRequest(new { message = "Usuário já existe." });
+
+        return Ok(new { message = "Usuário cadastrado com sucesso." });
     }
 }
