@@ -2,12 +2,16 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using PdfGeneratorService.Domain.Entities.Base;
 
-namespace PdfGeneratorService.Infrastructure.Mappings.Base;
+namespace PdfGeneratorService.Infrastructure.Data.Mappings.Base;
 
-public static class EntityBaseMap
+public abstract class EntityBaseMap<TEntity> : IEntityTypeConfiguration<TEntity> where TEntity : EntityBase
 {
-    public static void ConfigureBase<TEntity>(EntityTypeBuilder<TEntity> builder) where TEntity : EntityBase
+    public virtual void Configure(EntityTypeBuilder<TEntity> builder)
     {
+        builder.Property(e => e.Id)
+            .HasColumnName("id")
+            .IsRequired();
+
         builder.Property(e => e.CriadoEm)
             .HasColumnName("criado_em")
             .IsRequired();
