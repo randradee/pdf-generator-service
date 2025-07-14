@@ -1,3 +1,4 @@
+using PdfGeneratorService.Infrastructure.Data.Configuration;
 using PdfGeneratorService.WebApi.Config;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,6 +8,8 @@ builder.Configuration
     .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
     .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true, reloadOnChange: true)
     .AddEnvironmentVariables();
+
+builder.Services.AddDatabase(builder.Configuration);
 
 builder.Services.AddJwtAuthentication(builder.Configuration);
 builder.Services.AddSwaggerConfig();
